@@ -44,6 +44,11 @@ class ForgotPassword extends StatelessWidget {
                         SizedBox(
                             width: double.infinity,
                             child: ElevatedButton(
+                                style: ButtonStyle(
+                                    backgroundColor: MaterialStateProperty.all(
+                                        Theme.of(context)
+                                            .colorScheme
+                                            .secondary)),
                                 onPressed: () {
                                   controller.forgotPassword();
                                 },

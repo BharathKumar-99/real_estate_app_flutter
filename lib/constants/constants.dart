@@ -24,12 +24,12 @@ class Constants {
   static const String myProperty = "my-properties";
   static const String requirement = "requirement/create";
   static const String privacyPolicy = "https://ajmanre.com/terms-conditions";
+  static const String logo = "https://ajmanre.com/storage/new-logo.png";
 
 //int static constants
   static const int featured = 1;
   static const String databaseName = "App_DataBase";
   static const String selectedIndex = "'selectedIndex'";
-
   static const String reqFeatured = "featured";
   static const String reqKeyword = "keyword";
   static const String reqAuthorization = "Authorization";
@@ -37,6 +37,7 @@ class Constants {
   static const String reqNewPassword = "new_password";
   static const String title = "title";
   static const String fullName = "full_name";
+  static const String name = "name";
   static const String firstName = "first_name";
   static const String lastName = "last_name";
   static const String userName = "username";
@@ -52,9 +53,24 @@ class Constants {
   static const String images = "images";
   static const String user = "user";
   static const String token = "token";
+  static const String phone = "phone";
+  static const String address = "address";
+  static const String subject = "subject";
+  static const String content = "content";
+  static const String wishlist = "wishlist";
+  static const String wishlistTitle = "Wishlist";
 
 //Intent
   static const String propertyId = "propertyId";
   static const String isAdd = "isAdd";
   static const String url = "url";
+
+  //String
+  static const String propertiesType = 'Properties Type';
+  static const String seeAll = 'See All';
+  static const String popularAjmanLocation = 'Popular Ajman Location';
+  static const String featureProperties = 'Featured Properties';
+  static const String rentProperties = 'Rent Properties';
+  static const String saleProperties = 'Sale Properties';
+  static const String error = 'Error';
 }

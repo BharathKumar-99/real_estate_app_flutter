@@ -1,52 +1,64 @@
-import 'package:real_estate_app/controller/requriment_controller.dart';
+import 'package:real_estate_app/controller/profile_controller.dart';
 import 'package:real_estate_app/util/config.dart';
 
-class RequirementScreen extends StatelessWidget {
-  const RequirementScreen({super.key});
+class EditProfile extends StatelessWidget {
+  const EditProfile({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: Text(
-        'Requirement',
-        style: Theme.of(context).textTheme.headlineMedium,
-      )),
-      body: GetBuilder<RequrimentController>(
-          init: RequrimentController(),
+      appBar: AppBar(),
+      body: GetBuilder<ProfileController>(
+          init: ProfileController(),
           builder: (controller) {
-            return SingleChildScrollView(
+            return Padding(
+              padding: const EdgeInsets.all(20.0),
               child: Wrap(
+                runSpacing: 8,
                 children: [
+                  const Text('First name'),
                   TextField(
-                    controller: controller.title,
+                    controller: controller.firstName,
                     decoration: const InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(),
                         isDense: true,
-                        hintText: 'Title'),
+                        hintText: 'First Name'),
                   ),
+                  const Text('Last name'),
                   TextField(
-                    controller: controller.name,
+                    controller: controller.lastName,
                     decoration: const InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(),
                         isDense: true,
-                        hintText: 'Name'),
+                        hintText: 'Last Name'),
                   ),
+                  const Text('Full name'),
                   TextField(
-                    controller: controller.phoneNo,
+                    controller: controller.fullName,
                     decoration: const InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(),
                         isDense: true,
-                        hintText: 'Phone'),
+                        hintText: 'Full Name'),
                   ),
+                  const Text('User name'),
                   TextField(
-                    controller: controller.email,
+                    controller: controller.username,
+                    decoration: const InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white,
+                        border: OutlineInputBorder(),
+                        isDense: true,
+                        hintText: 'User Name'),
+                  ),
+                  const Text('Email'),
+                  TextField(
+                    controller: controller.emailT,
                     decoration: const InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
@@ -54,50 +66,42 @@ class RequirementScreen extends StatelessWidget {
                         isDense: true,
                         hintText: 'Email'),
                   ),
+                  const Text('WhatsApp Number'),
                   TextField(
-                    controller: controller.description,
+                    controller: controller.whatsAppName,
                     decoration: const InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(),
                         isDense: true,
-                        hintText: 'Description'),
+                        hintText: 'WhatsApp Number'),
                   ),
+                  const Text('Phone'),
                   TextField(
-                    controller: controller.postType,
+                    controller: controller.firstName,
                     decoration: const InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(),
                         isDense: true,
-                        hintText: 'Post Type'),
+                        hintText: 'Phone'),
                   ),
-                  TextField(
-                    controller: controller.location,
-                    decoration: const InputDecoration(
-                        filled: true,
-                        fillColor: Colors.white,
-                        border: OutlineInputBorder(),
-                        isDense: true,
-                        hintText: 'Location'),
-                  ),
-                  TextField(
-                    controller: controller.amount,
-                    keyboardType: TextInputType.number,
-                    decoration: const InputDecoration(
-                        filled: true,
-                        fillColor: Colors.white,
-                        border: OutlineInputBorder(),
-                        isDense: true,
-                        hintText: 'Amount'),
-                  ),
-                  Visibility(child: Container()),
-                  ElevatedButton(
-                      onPressed: () {
-                        controller.selectImage();
-                      },
-                      child: const Text('Select Image')),
-                  ElevatedButton(onPressed: () {}, child: const Text('Submit')),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          controller.updateUser();
+                          Get.back();
+                        },
+                        style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(
+                                Theme.of(context).colorScheme.secondary)),
+                        child: const Text('Update'),
+                      ),
+                    ),
+                  )
                 ],
               ),
             );

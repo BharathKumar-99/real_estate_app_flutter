@@ -18,9 +18,12 @@ class MyApp extends StatelessWidget {
       title: 'Real Estate',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+          primaryColor: Colors.yellow.shade800,
           scaffoldBackgroundColor: Colors.white,
           bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-              backgroundColor: Colors.white, unselectedItemColor: Colors.grey),
+              backgroundColor: Colors.white70,
+              elevation: 0,
+              unselectedItemColor: Colors.grey),
           appBarTheme: const AppBarTheme(
             elevation: 0,
             backgroundColor: Colors.transparent,
@@ -30,9 +33,16 @@ class MyApp extends StatelessWidget {
               statusBarBrightness: Brightness.light,
             ),
           ),
+          cardTheme: CardTheme(
+              color: Colors.white.withOpacity(0.9),
+              shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(15)),
+                  side: BorderSide(
+                    color: Colors.white,
+                  ))),
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color.fromARGB(255, 31, 64, 97),
+              backgroundColor: const Color.fromARGB(255, 15, 202, 152),
               elevation: 0,
               textStyle: GoogleFonts.arima(fontSize: 20),
               shape: RoundedRectangleBorder(
@@ -41,6 +51,9 @@ class MyApp extends StatelessWidget {
             ),
           ),
           textTheme: TextTheme(
+              headlineLarge:
+                  GoogleFonts.roboto(fontSize: 25, fontWeight: FontWeight.w500),
+              bodyMedium: GoogleFonts.roboto(fontWeight: FontWeight.w500),
               headlineSmall:
                   GoogleFonts.roboto(fontSize: 20, color: Colors.black),
               headlineMedium: GoogleFonts.rowdies(
@@ -62,6 +75,7 @@ class MyApp extends StatelessWidget {
               background: Colors.white,
               onBackground: Colors.black,
               surface: Colors.grey.shade300,
+              surfaceTint: Colors.grey.shade400,
               onSurface: Colors.black54)),
       darkTheme: ThemeData(
         brightness: Brightness.dark,

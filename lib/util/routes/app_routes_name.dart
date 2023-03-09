@@ -4,4 +4,5 @@ class RouteName {
   final String splashScreen = '/splashScreen';
   final String forgotPassword = '/forgotPassword';
   final String dashboard = '/dashboard';
+  final String editProfile = '/editProfile';
 }

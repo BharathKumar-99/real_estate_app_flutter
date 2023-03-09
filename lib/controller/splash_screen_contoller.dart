@@ -7,17 +7,20 @@ import '../util/preferences.dart';
 class SplashScreenController extends GetxController {
   @override
   void onInit() {
-    Future.delayed(const Duration(milliseconds: 500), () {
-      if (getToken() == null) {
-        Get.toNamed(routeName.login);
+    Future.delayed(const Duration(milliseconds: 500), () async {
+      var token = await getToken();
+      if (token == null) {
+        Get.offAllNamed(routeName.login);
       } else {
-        Get.toNamed(routeName.dashboard);
+        Get.offAllNamed(routeName.dashboard);
       }
     });
     super.onInit();
   }
 
   getToken() async {
-    await StroageUtil().getString(Constants.token);
+    var object = await StroageUtil().getString(Constants.token);
+    print(object);
+    return object;
   }
 }
